@@ -83,7 +83,7 @@ mv $transcriptaudiofilename $RECORDINGS_DIR$new_fileName_audio
 sed -i 's/@muc.sariska.io//g' $RECORDINGS_DIR/$new_fileName_text
 sed '/Fellow Jitser/d' $RECORDINGS_DIR/$new_fileName_text
 
-sed '/Fellow Jitser/d' $RECORDINGS_DIR/$new_fileName_text > $RECORDINGS_DIR/$new_fileName_text >  temp.txt
+sed '/Fellow Jitser/d' $RECORDINGS_DIR/$new_fileName_text >  temp.txt
 
 mv temp.txt $RECORDINGS_DIR/$new_fileName_text
 
