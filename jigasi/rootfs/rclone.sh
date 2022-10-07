@@ -72,9 +72,6 @@ exttranscription=".txt"
 new_fileName_audio=$prefixaudio-$roomname-$current_time$extaudio
 new_fileName_text=$prefixtranscription-$roomname-$current_time$exttranscription
 
-sed '/Fellow Jitser/d' $RECORDINGS_DIR/$new_fileName_text
-sed -i 's/@muc.sariska.io//g' $RECORDINGS_DIR/$new_fileName_text
-
 echo $transcriptfilename
 
 FETCH_S3_CREDENTIALS_URL="https://api.sariska.io/api/v1/account/storage-credentials/"
@@ -83,8 +80,8 @@ SERVICE_TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MCwiaWF0IjoxNjU0NTM1
 mv $transcriptfilename $RECORDINGS_DIR$new_fileName_text
 mv $transcriptaudiofilename $RECORDINGS_DIR$new_fileName_audio
 
-sed '/Fellow Jitser/d' $RECORDINGS_DIR/$new_fileName_text
 sed -i 's/@muc.sariska.io//g' $RECORDINGS_DIR/$new_fileName_text
+sed '/Fellow Jitser/d' $RECORDINGS_DIR/$new_fileName_text
 
 
 echo $FETCH_S3_CREDENTIALS_URL
