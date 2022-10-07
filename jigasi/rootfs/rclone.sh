@@ -81,8 +81,10 @@ mv $transcriptfilename $RECORDINGS_DIR$new_fileName_text
 mv $transcriptaudiofilename $RECORDINGS_DIR$new_fileName_audio
 
 sed -i 's/@muc.sariska.io//g' $RECORDINGS_DIR/$new_fileName_text
-sed '/Fellow Jitser/d' $RECORDINGS_DIR/$new_fileName_text
 
+sed '/Fellow Jitser/d' $RECORDINGS_DIR/$new_fileName_text > $RECORDINGS_DIR/$new_fileName_text >  temp.txt
+
+mv temp.txt $RECORDINGS_DIR/$new_fileName_text
 
 echo $FETCH_S3_CREDENTIALS_URL
 echo $SERVICE_TOKEN
